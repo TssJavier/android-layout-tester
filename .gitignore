@@ -9,3 +9,5 @@ screenshots/
 
 # Logs opcionales
 *.log
+
+allure-results/
