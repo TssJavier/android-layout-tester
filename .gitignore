@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Credenciales privadas
+.env
+
+# Screenshots de errores
+screenshots/
+
+# Logs opcionales
+*.log
