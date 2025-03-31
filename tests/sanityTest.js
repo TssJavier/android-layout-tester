@@ -35,7 +35,7 @@ const { runSanityTest } = require('../utils/layoutValidator');
 const { getRandomActivitiesFromJSON } = require('../utils/activityUtils');
 
 describe('📲 Sanity Layout Test en Android', async () => {
-  const activities = getRandomActivitiesFromJSON('./activities.json', 4); // 4 actividades por dispositivo
+  const activities = getRandomActivitiesFromJSON('./utils/activities.json', 4); // 4 actividades por dispositivo
 
   activities.forEach((activityId, index) => {
     it(`Actividad ${index + 1}: Validación visual y de layout`, async () => {

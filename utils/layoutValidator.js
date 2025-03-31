@@ -1,6 +1,8 @@
 const { $, browser, driver } = require('@wdio/globals');
 const fs = require('fs');
 const path = require('path');
+const { addAttachment } = require('@wdio/allure-reporter').default;
+
 
 // 🔐 Carga de variables de entorno (email, password, etc.)
 require('dotenv').config();
@@ -16,6 +18,10 @@ async function captureScreenshot(description) {
 
     const fileName = path.join(basePath, `failure-${description}-${timestamp}.png`);
     await browser.saveScreenshot(fileName);
+
+    // 🆕 Añade esta línea:
+    addAttachment(`📷 ${description}`, fs.readFileSync(fileName), 'image/png');
+
     console.log(`📸 Screenshot guardada: ${fileName}`);
 }
 

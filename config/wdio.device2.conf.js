@@ -5,9 +5,10 @@ exports.config = {
     capabilities: [{
         platformName: 'Android',
         'appium:deviceName': 'emulator-5556',
-        'appium:platformVersion': '13.0',
-        'appium:appPackage': 'cognifit.android.clevermind.children',
-        'appium:appActivity': 'cognifit.android.clevermind.children.MainActivity',
+        //'appium:platformVersion': '12',
+        'appium:automationName': 'UiAutomator2',
+        'appium:appPackage': 'cognifit.android.minded.children',
+        'appium:appActivity': 'cognifit.android.minded.children.MainActivity',
         'appium:autoGrantPermissions': true,
         'appium:noReset': true,
     }],

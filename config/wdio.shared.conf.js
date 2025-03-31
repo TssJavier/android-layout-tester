@@ -1,5 +1,3 @@
-const { config } = require('wdio.conf.js');
-
 exports.config = {
     runner: 'local',
     specs: ['./tests/**/*.js'],
@@ -9,7 +7,14 @@ exports.config = {
         ui: 'bdd',
         timeout: 600000 // 10 minutos por actividad
     },
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['allure', {
+          outputDir: 'allure-results',
+          disableWebdriverStepsReporting: false,
+          disableWebdriverScreenshotsReporting: false,
+        }]
+      ],
     services: ['appium'],
     logLevel: 'info',
     waitforTimeout: 10000,
